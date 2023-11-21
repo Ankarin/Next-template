@@ -36,7 +36,7 @@ export async function signup({
     email,
     password,
     options: {
-      emailRedirectTo: `${origin}`,
+      emailRedirectTo: `${origin}/api/confirm-callback`,
     },
   });
   if (error) return error.message;
@@ -58,6 +58,17 @@ export async function forgot({
   if (error) return error.message;
   else {
     return "success";
+  }
+}
+export async function reset({
+  password,
+}: {
+  password: string;
+}): Promise<string | void> {
+  const { error } = await supabase.auth.updateUser({ password: password });
+  if (error) return error.message;
+  else {
+    redirect("/", RedirectType.replace);
   }
 }
 
