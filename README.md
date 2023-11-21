@@ -6,12 +6,10 @@ Minimal setup for small apps. Comes with ready auth: sign up, sign in, forgot pa
 Next.js 14 with server actions, Tailwind, Shadcn/ui, Tanstack(React Query), Zustand. 
 Supabase - Mandatory for auth, but the connection to db is via drizzle, so switch to Planetscale or other if needed.
 
+To connect to supabase add required secrets in .env
+
 
 To run:
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev / yarn dev / pnpm dev / bun dev.
+
+
